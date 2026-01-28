@@ -1,0 +1,10 @@
+.machine-info-wrap {
+  margin: 0 0 2rem;
+}
+.machine-condition {
+  background: var(--window-trim);
+  display: block;
+  height: 10px;
+  margin: 0.5rem 0 0;
+  transition: "width 0.5s ease";
+}

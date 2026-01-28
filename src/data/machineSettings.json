@@ -1,0 +1,34 @@
+[
+  {
+    "type": "lathe",
+    "label": "Lathe",
+    "letter": "L",
+    "price": 1000,
+    "prodRate": 10,
+    "conditionModifier": 0.5
+  },
+  {
+    "type": "verticalMill",
+    "label": "Vertical Mill",
+    "letter": "V",
+    "price": 2000,
+    "prodRate": 25,
+    "conditionModifier": 0.3
+  },
+  {
+    "type": "horizontalMill",
+    "label": "Horizontal Mill",
+    "letter": "H",
+    "price": 5000,
+    "prodRate": 50,
+    "conditionModifier": 0.2
+  },
+  {
+    "type": "fiveAxis",
+    "label": "Five Axis",
+    "letter": "F",
+    "price": 10000,
+    "prodRate": 100,
+    "conditionModifier": 0.1
+  }
+]

@@ -1,0 +1,27 @@
+.drawer {
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  grid-area: drawer;
+  height: 100%;
+  min-height: 250px;
+
+  h2 {
+    color: lightgrey;
+  }
+}
+
+.drawer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+
+.drawer-controls {
+  display: flex;
+
+  button {
+    color: lightgrey;
+  }
+}

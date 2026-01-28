@@ -1,0 +1,133 @@
+button {
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button-prime {
+  align-self: flex-start;
+  background: transparent;
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  padding: 0.25rem 0;
+  text-align: left;
+}
+
+.button-prime:hover {
+  background: var(--btn-hvr);
+}
+
+.button-close {
+  background-color: transparent;
+  border: none;
+  color: var(--window-bg);
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.button-close:hover {
+  color: var(--btn-hvr) !important;
+}
+
+.button-menu {
+  background: var(--window-trim);
+  color: var(--window-bg);
+  padding: 0.25rem 1rem;
+  width: 100%;
+}
+
+.button-menu:hover {
+  color: var(--btn-hvr);
+}
+
+.grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-areas:
+    "sidebar canvas canvas"
+    "sidebar canvas canvas"
+    "sidebar drawer drawer";
+  height: calc(100% - 1rem);
+}
+
+canvas {
+  border: 2px solid var(--window-trim);
+  border-radius: 0.5rem;
+  grid-area: canvas;
+  height: 100%;
+  padding: 25px;
+  width: 100%;
+}
+
+.menu {
+  grid-column: 2/4;
+  grid-row: 1/4;
+}
+
+.menu-contents {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  height: calc(100% - 4rem);
+
+  &.column {
+    flex-direction: column;
+  }
+}
+
+.window {
+  background-color: var(--window-bg);
+  border: 2px solid var(--window-trim);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 100%;
+
+  .window-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 1rem;
+  }
+
+  h2 {
+    align-items: center;
+    background-color: var(--window-trim);
+    color: var(--window-bg);
+    display: flex;
+    font-size: 1rem;
+    font-weight: normal;
+    justify-content: space-between;
+    margin: 0 0 1rem;
+    padding: 0.25rem 1rem;
+    text-align: left;
+  }
+}
+
+.window--full {
+  left: 0;
+  position: absolute;
+  top: 0;
+  height: calc(100% - 1rem);
+}
+
+.window--long {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: auto;
+}
+
+.error {
+  background-color: var(--btn-hvr);
+}
+
+.paused {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  display: flex;
+  grid-area: canvas;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}

@@ -1,0 +1,56 @@
+.buy-menu-list,
+.buy-menu-cart {
+  align-items: stretch;
+  border: 2px solid var(--window-trim);
+  border-radius: var(--br);
+  flex-grow: 1;
+  padding: 0.5rem;
+  width: 50%;
+}
+
+.buy-menu-list {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    display: block;
+  }
+
+  span.dots {
+    border: 2px dotted var(--window-trim);
+    height: 2px;
+    padding: 0 0.5rem;
+    width: 100%;
+  }
+
+  button {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.buy-menu-cart {
+  position: relative;
+}
+
+.buy-menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: calc(100% - 60px);
+  overflow-y: scroll;
+}
+
+.buy-menu-tray {
+  border-top: 2px solid var(--window-trim);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.buy-menu-total {
+  padding: 0.25rem 0.5rem;
+}

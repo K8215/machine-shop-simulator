@@ -1,0 +1,8 @@
+aside {
+  grid-area: sidebar;
+
+  button:not(.button-close):hover {
+    background: var(--window-trim);
+    color: var(--window-bg);
+  }
+}

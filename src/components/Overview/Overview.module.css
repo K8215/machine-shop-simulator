@@ -1,0 +1,12 @@
+.overview {
+  border: 2px solid var(--window-trim);
+  border-radius: var(--br);
+
+  > div {
+    padding: 0.5rem;
+  }
+}
+
+.overview-machines {
+  overflow-y: scroll;
+}

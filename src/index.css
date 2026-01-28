@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+:root {
+  --window-bg: #86c5fb;
+  --window-trim: #000203;
+  --btn-hvr: yellow;
+  --br: 0.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Press Start 2P", system-ui;
+  letter-spacing: 0.15rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-transform: uppercase;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  padding: 0.5rem;
+}
+
+p {
+  margin: 0 0 0.5rem;
+}
+
+h3 {
+  border-bottom: 2px solid var(--window-trim);
+  font-weight: normal;
+  margin: 0 0 1rem;
+  padding: 0 0 1rem;
+}
+
+#root {
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
