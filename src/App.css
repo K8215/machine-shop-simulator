@@ -47,7 +47,8 @@ button {
     "sidebar canvas canvas"
     "sidebar canvas canvas"
     "sidebar drawer drawer";
-  height: calc(100% - 1rem);
+  grid-template-rows: auto 1fr minmax(225px, auto);
+  height: 100%;
 }
 
 canvas {

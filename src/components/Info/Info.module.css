@@ -4,7 +4,6 @@
   flex-direction: column;
   grid-area: drawer;
   height: 100%;
-  min-height: 250px;
 
   h2 {
     color: lightgrey;

@@ -40,7 +40,11 @@ export default function Overview({ setOpenMenu, machines, lifetimeEarnings }) {
                     <p>
                       {machine.label} {machine.id}
                     </p>
-                    <MachineInfo machine={machine} id={machine.id} />
+                    <MachineInfo
+                      machine={machine}
+                      id={machine.id}
+                      margin="2rem"
+                    />
                   </div>
                 ))}
               </div>

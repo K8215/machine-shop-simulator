@@ -37,7 +37,7 @@ h3 {
 }
 
 #root {
-  height: 100vh;
+  height: calc(100vh - 1rem);
   position: relative;
   width: 100%;
 }

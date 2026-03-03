@@ -1,8 +1,14 @@
 import styles from "./MachineInfo.module.css";
 
-export default function MachineInfo({ machine, id }) {
+export default function MachineInfo({ machine, id, margin }) {
   return (
-    <div id={id} className={styles["machine-info-wrap"]}>
+    <div
+      id={id}
+      className={styles["machine-info-wrap"]}
+      style={{
+        margin: `0 0 ${margin ? margin : 0}`,
+      }}
+    >
       <p>
         Status: {machine.active ? "Running" : "Idle"} &{" "}
         {machine.breakdown ? "Broken" : "Functional"}
