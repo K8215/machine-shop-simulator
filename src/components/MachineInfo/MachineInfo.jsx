@@ -13,7 +13,7 @@ export default function MachineInfo({ machine, id, margin }) {
         Status: {machine.active ? "Running" : "Idle"} &{" "}
         {machine.breakdown ? "Broken" : "Functional"}
       </p>
-      {/* TODO: Revise prod rate info later to incorporate employee effects */}
+      {/* TODO: Revise prod rate info later to incorporate operator effects */}
       <p>Production Rate: ${machine.prodRate}</p>
       <p>Repair Cost: ${machine.price / 2}</p>
       <p>Scrap Value: ${machine.price / 4}</p>

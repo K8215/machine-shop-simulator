@@ -5,7 +5,7 @@ import {
   BuyMachines,
   Sidebar,
   Canvas,
-  HireEmployees,
+  HireOperators,
   Overview,
   HumanResources,
 } from "./components";
@@ -69,7 +69,7 @@ function App() {
             lifetimeEarnings={lifetimeEarnings}
           />
         )}
-        {openMenu === "hire" && <HireEmployees setOpenMenu={setOpenMenu} />}
+        {openMenu === "hire" && <HireOperators setOpenMenu={setOpenMenu} />}
         {openMenu === "hr" && <HumanResources setOpenMenu={setOpenMenu} />}
       </div>
     </>

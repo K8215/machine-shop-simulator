@@ -1,8 +1,8 @@
-export default function HireEmployees({ setOpenMenu }) {
+export default function HireOperators({ setOpenMenu }) {
   return (
     <div className="menu window">
       <h2>
-        Hire Employees{" "}
+        Hire Operators{" "}
         <button className="button-close" onClick={() => setOpenMenu(null)}>
           X
         </button>

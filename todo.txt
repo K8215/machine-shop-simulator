@@ -1,0 +1,37 @@
+Day Tracker
+How many ticks per day? 24?
+Log days in the Overview screen
+
+Operators
+Specialize in one machine type.
+3 Ranks - Novice, Senior, Master
+Assign to machines
+Gain experience
+Quirks - jack of all, clumsy, lazy, motivated, attentive
+
+Departments
+Departments are like the tech tree. Unlock each department and hire specialists within them that grant special perks.
+Maintenance - Lower repair costs. Day Tracker - speed repair time. Lower breakdown rates.
+Floor Management - Supress bad quirks. Cuts negative quirk effects in half. Remove somebody's negative quirk.
+QA - Boost revenue for specific machine types.
+Education - Boosts operators. Boost quirks. Boost xp generation. Attract better hires.
+Tool Crib - 
+
+Timed Events
+Timed periods where you must achieve a certain goal for a big reward or get dinged.
+OSHA Inspection - Breakdowns result in fines.
+Client Inspection - No breakdowns for a day and you get a cash reward. 
+Job Fair - Double available operators to hire for the next week.
+Recession - Less Operator available, cut revenue
+End of Quarter - Day Tracker - Timed revenue target. Hit it and get a cash reward.
+
+Machines
+Only active when assigned an operator
+Day Tracker - repair takes time.
+
+Hire Screen
+Roll random operators
+Day Tracker - One roll per week.
+
+Human Resources
+Like Overview but for operators
