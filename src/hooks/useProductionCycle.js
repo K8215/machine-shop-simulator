@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { startingFunds, prodCycleRate } from "../data/settings";
+import { startingFunds, prodCycleRate } from "../data/gameSettings";
 import { useFunds, useCanvasEvents } from "./";
 
 export default function useProductionCycle({ machines, setMachines, pause }) {

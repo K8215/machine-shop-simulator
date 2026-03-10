@@ -16,6 +16,7 @@ function App() {
   const [openMenu, setOpenMenu] = useState(null);
   const [machines, setMachines] = useState([]);
   const [selectedMachineId, setSelectedMachineId] = useState(null);
+  const [operators, setOperators] = useState([]);
 
   //Init Game Processes
   const { pause } = useControls();
@@ -69,8 +70,15 @@ function App() {
             lifetimeEarnings={lifetimeEarnings}
           />
         )}
-        {openMenu === "hire" && <HireOperators setOpenMenu={setOpenMenu} />}
-        {openMenu === "hr" && <HumanResources setOpenMenu={setOpenMenu} />}
+        {openMenu === "hire" && (
+          <HireOperators
+            setOpenMenu={setOpenMenu}
+            setOperators={setOperators}
+          />
+        )}
+        {openMenu === "hr" && (
+          <HumanResources setOpenMenu={setOpenMenu} operators={operators} />
+        )}
       </div>
     </>
   );

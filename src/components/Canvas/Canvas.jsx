@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { machineSize, prodCycleRate } from "../../data/settings.js";
+import { machineSize, prodCycleRate } from "../../data/gameSettings.js";
 import Machine from "../../classes/Machine.js";
 
 export default function Canvas({
@@ -70,7 +70,7 @@ export default function Canvas({
             return machine instanceof Machine
               ? Object.assign(Object.create(Machine.prototype), updated)
               : new Machine(updated);
-          })
+          }),
         );
         if (onMachineClick) {
           onMachineClick(clicked);

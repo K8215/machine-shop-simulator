@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { machineMax } from "../data/settings.js";
+import { machineMax } from "../data/gameSettings.js";
 import { newMachine } from "../lib";
 
 export default function useBuyMachines({

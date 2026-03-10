@@ -1,4 +1,8 @@
-import { machineSize, maxCondition, prodCycleRate } from "../data/settings.js";
+import {
+  machineSize,
+  maxCondition,
+  prodCycleRate,
+} from "../data/gameSettings.js";
 
 export default class Machine {
   constructor({
@@ -42,7 +46,7 @@ export default class Machine {
       this.position.x + vibrationOffset,
       this.position.y,
       machineSize,
-      machineSize
+      machineSize,
     );
 
     //Letters
@@ -53,7 +57,7 @@ export default class Machine {
     ctx.fillText(
       this.letter,
       this.position.x + machineSize / 2 + vibrationOffset,
-      this.position.y + machineSize / 2
+      this.position.y + machineSize / 2,
     );
 
     // Flash indicator at the start of each production cycle (for 1/4 of the cycle)
@@ -66,13 +70,13 @@ export default class Machine {
       const color = this.breakdown
         ? "red"
         : !this.active && !this.breakdown
-        ? "orange"
-        : "green";
+          ? "orange"
+          : "green";
       const value = this.breakdown
         ? "Breakdown!"
         : !this.active && !this.breakdown
-        ? "Idle"
-        : `$${this.prodRate}`;
+          ? "Idle"
+          : `$${this.prodRate}`;
 
       ctx.fillStyle = color;
       ctx.font = "20px Arial";
@@ -81,7 +85,7 @@ export default class Machine {
       ctx.fillText(
         value,
         this.position.x + machineSize / 2 + vibrationOffset,
-        this.position.y - 10
+        this.position.y - 10,
       );
     }
 
@@ -90,17 +94,17 @@ export default class Machine {
       this.selected && this.breakdown
         ? "red"
         : this.selected && !this.active && !this.breakdown
-        ? "orange"
-        : this.selected
-        ? "green"
-        : "grey";
+          ? "orange"
+          : this.selected
+            ? "green"
+            : "grey";
     ctx.strokeStyle = stroke;
     ctx.lineWidth = 5;
     ctx.strokeRect(
       this.position.x + vibrationOffset,
       this.position.y,
       machineSize,
-      machineSize
+      machineSize,
     );
   }
 

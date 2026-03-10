@@ -1,10 +1,6 @@
 import { useCallback } from "react";
-import { maxCondition } from "../data/settings";
-import {
-  conditionDepleted,
-  badDiceRoll,
-  degradeCondition,
-} from "../lib";
+import { maxCondition } from "../data/gameSettings";
+import { conditionDepleted, badDiceRoll, degradeCondition } from "../lib";
 
 export default function useBreakdowns(machines, setMachines) {
   return useCallback(() => {

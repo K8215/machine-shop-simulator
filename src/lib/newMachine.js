@@ -1,6 +1,10 @@
 import Machine from "../classes/Machine.js";
 import machinesData from "../data/machineSettings.json";
-import { machineColumns, machineGap, machineSize } from "../data/settings.js";
+import {
+  machineColumns,
+  machineGap,
+  machineSize,
+} from "../data/gameSettings.js";
 
 export function newMachine({ item, index }) {
   const machineType = machinesData.find((m) => m.type === item.type);

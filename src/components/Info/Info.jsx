@@ -5,7 +5,7 @@ import {
   machineGap,
   machineSize,
   maxCondition,
-} from "../../data/settings.js";
+} from "../../data/gameSettings.js";
 import machinesData from "../../data/machineSettings.json";
 import MachineInfo from "../MachineInfo/MachineInfo";
 

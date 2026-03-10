@@ -1,4 +1,4 @@
-export default function HireOperators({ setOpenMenu }) {
+export default function HireOperators({ setOpenMenu, setOperators }) {
   return (
     <div className="menu window">
       <h2>
@@ -7,7 +7,7 @@ export default function HireOperators({ setOpenMenu }) {
           X
         </button>
       </h2>
-      <div className="menu-contents">TBD</div>
+      <div className="menu-contents"></div>
     </div>
   );
 }
