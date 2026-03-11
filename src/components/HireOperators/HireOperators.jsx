@@ -1,4 +1,19 @@
-export default function HireOperators({ setOpenMenu, setOperators }) {
+import useHireOperator from "../../hooks/useHireOperator";
+
+export default function HireOperator({
+  funds,
+  setFunds,
+  setOpenMenu,
+  setOperators,
+}) {
+  const { onHireOperator } = useHireOperator({
+    funds,
+    setFunds,
+    setOperators,
+  });
+
+  const handleHire = () => onHireOperator();
+
   return (
     <div className="menu window">
       <h2>
@@ -7,7 +22,11 @@ export default function HireOperators({ setOpenMenu, setOperators }) {
           X
         </button>
       </h2>
-      <div className="menu-contents"></div>
+      <div className="menu-contents">
+        <button className="button-menu" onClick={handleHire}>
+          Hire
+        </button>
+      </div>
     </div>
   );
 }
