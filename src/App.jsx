@@ -8,6 +8,7 @@ import {
   HireOperators,
   Overview,
   HumanResources,
+  Departments,
 } from "./components";
 import { useProductionCycle, useControls } from "./hooks";
 
@@ -80,6 +81,9 @@ function App() {
         )}
         {openMenu === "hr" && (
           <HumanResources setOpenMenu={setOpenMenu} operators={operators} />
+        )}
+        {openMenu === "departments" && (
+          <Departments setOpenMenu={setOpenMenu} />
         )}
       </div>
     </>

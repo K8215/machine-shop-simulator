@@ -23,9 +23,9 @@ export default function HireOperator({
         </button>
       </h2>
       <div className="menu-contents">
-        <button className="button-menu" onClick={handleHire}>
+        {/* <button className="button-menu" onClick={handleHire}>
           Hire
-        </button>
+        </button> */}
       </div>
     </div>
   );
