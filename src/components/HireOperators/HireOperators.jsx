@@ -41,6 +41,7 @@ export default function HireOperator({
             </p>
             <p>Specialization: {hire.specialization}</p>
             <p>Quirk: {hire.quirk}</p>
+            <button className="button-menu">TBD</button>
             {/* <button className="button-menu" onClick={handleHire}>
               Hire
             </button> */}
