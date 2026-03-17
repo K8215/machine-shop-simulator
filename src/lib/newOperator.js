@@ -3,20 +3,32 @@ import operatorData from "../data/operatorSettings.json";
 
 export function newOperator() {
   const id = Math.floor(Math.random() * 9000 + 1000);
-  console.log(operatorData);
-  //const firstname
+  const firstname =
+    operatorData.firstNames[
+      Math.floor(Math.random() * operatorData.firstNames.length + 1)
+    ];
+  const lastname =
+    operatorData.lastNames[
+      Math.floor(Math.random() * operatorData.lastNames.length + 1)
+    ];
+  const specialization =
+    operatorData.specializations[
+      Math.floor(Math.random() * operatorData.specializations.length)
+    ];
+  const quirk =
+    operatorData.quirks[Math.floor(Math.random() * operatorData.quirks.length)];
 
   return new Operator({
     id: `O-${id}`,
-    name: "john doe",
+    name: `${firstname} ${lastname}`,
     position: {
       x: null,
       y: null,
     },
-    specialization: "lathe",
+    specialization: specialization,
     rank: "novice",
     experience: 0,
     assignment: null,
-    quirk: "lazy",
+    quirk: quirk,
   });
 }
