@@ -20,16 +20,17 @@ export default function Overview({ setOpenMenu, machines, lifetimeEarnings }) {
         </button>
       </h2>
       <div className="menu-contents column">
-        {machines.length > 0 ? (
-          <>
-            <div className={`${styles.overview} ${styles["overview-data"]}`}>
-              <h2>Fast Stats:</h2>
-              <div>
-                <p>Lifetime Earnings: ${lifetimeEarnings}</p>
-                <p>Current Production Rate: ${currentProdRate}/S</p>
-                <p>Cumulative Scrap Value: ${Math.floor(scrapValue)}</p>
-              </div>
+        <>
+          <div className={`${styles.overview} ${styles["overview-data"]}`}>
+            <h2>Fast Stats:</h2>
+            <div>
+              <p>Lifetime Earnings: ${lifetimeEarnings}</p>
+              <p>Current Production Rate: ${currentProdRate}/S</p>
+              <p>Cumulative Scrap Value: ${Math.floor(scrapValue)}</p>
             </div>
+          </div>
+
+          {machines.length > 0 ? (
             <div
               className={`${styles.overview} ${styles["overview-machines"]}`}
             >
@@ -49,10 +50,10 @@ export default function Overview({ setOpenMenu, machines, lifetimeEarnings }) {
                 ))}
               </div>
             </div>
-          </>
-        ) : (
-          <p>Purchase a machine.</p>
-        )}
+          ) : (
+            <p>Purchase a machine.</p>
+          )}
+        </>
       </div>
     </div>
   );
