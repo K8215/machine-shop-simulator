@@ -11,7 +11,12 @@ export default function HireOperator({ setFunds, setOpenMenu, setOperators }) {
     setOperators,
   });
 
-  const handleHire = (selectedOperator) => onHireOperator(selectedOperator);
+  const handleHire = (selectedOperator) => {
+    onHireOperator(selectedOperator);
+    setAvailableHires((prev) =>
+      prev.filter((operator) => operator.id !== selectedOperator.id),
+    );
+  };
 
   useEffect(() => {
     const newOperators = Array.from({ length: 3 }, () => newOperator());

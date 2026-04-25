@@ -1,4 +1,4 @@
-export default function HumanResources({ setOpenMenu }) {
+export default function HumanResources({ setOpenMenu, operators }) {
   return (
     <div className="menu window">
       <h2>
@@ -7,7 +7,15 @@ export default function HumanResources({ setOpenMenu }) {
           X
         </button>
       </h2>
-      <div className="menu-contents">TBD</div>
+      <div className="menu-contents column">
+        {operators.map((operator) => (
+          <div key={operator.id}>
+            <p>
+              {operator.id} - {operator.name}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
