@@ -73,7 +73,6 @@ function App() {
         )}
         {openMenu === "hire" && (
           <HireOperators
-            funds={funds}
             setFunds={setFunds}
             setOpenMenu={setOpenMenu}
             setOperators={setOperators}

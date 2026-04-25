@@ -3,26 +3,19 @@ import styles from "./HireOperators.module.css";
 import useHireOperator from "../../hooks/useHireOperator";
 import { newOperator } from "../../lib";
 
-export default function HireOperator({
-  funds,
-  setFunds,
-  setOpenMenu,
-  setOperators,
-}) {
+export default function HireOperator({ setFunds, setOpenMenu, setOperators }) {
   const [availableHires, setAvailableHires] = useState([]);
 
   const { onHireOperator } = useHireOperator({
-    funds,
     setFunds,
     setOperators,
   });
 
-  const handleHire = () => onHireOperator();
+  const handleHire = (selectedOperator) => onHireOperator(selectedOperator);
 
   useEffect(() => {
     const newOperators = Array.from({ length: 3 }, () => newOperator());
     setAvailableHires(newOperators);
-    console.log(newOperators);
   }, []);
 
   return (
@@ -41,12 +34,14 @@ export default function HireOperator({
             </p>
             <p>Specialization: {hire.specialization}</p>
             <p>Quirk: {hire.quirk}</p>
-            <button className={`${styles["button-hire"]} button-menu`}>
-              TBD
-            </button>
-            {/* <button className="button-menu" onClick={handleHire}>
+            <button
+              className={`${styles["button-hire"]} button-menu`}
+              onClick={() => {
+                handleHire(hire);
+              }}
+            >
               Hire
-            </button> */}
+            </button>
           </div>
         ))}
       </div>

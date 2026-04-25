@@ -1,17 +1,24 @@
-import { useState } from "react";
-import { newOperator } from "../lib";
+export default function useHireOperator({ setFunds, setOperators }) {
+  const onHireOperator = (selectedOperator) => {
+    if (!selectedOperator) {
+      console.log("Error: No operator selected.");
+      return;
+    }
 
-export default function useHireOperator({
-  funds,
-  setFunds,
-  operators,
-  setOperators,
-}) {
-  const onHireOperator = () => {
-    const hiredOperator = newOperator();
+    const hiredOperator = {
+      ...selectedOperator,
+      hired: true,
+    };
 
-    setFunds(funds - 100);
-    setOperators((prev) => [...prev, hiredOperator]);
+    setFunds((prev) => (prev || 0) - 100);
+    setOperators((prev) => {
+      const currentList = prev || [];
+      const newList = [...currentList, hiredOperator];
+
+      //console.log("🟢 FULL OPERATORS ARRAY UPDATED:", newList);
+
+      return newList;
+    });
   };
 
   return { onHireOperator };

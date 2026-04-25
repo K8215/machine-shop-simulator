@@ -8,6 +8,7 @@ export default class Operator {
     experience,
     assignment,
     quirk,
+    hired,
   }) {
     this.id = id;
     this.name = name;
@@ -17,9 +18,10 @@ export default class Operator {
     this.experience = experience;
     this.assignment = assignment;
     this.quirk = quirk;
+    this.hired = hired;
   }
 
-  draw(ctx, cycleTime, paused = false) {
+  draw(ctx) {
     const centerX = 50;
     const centerY = 50;
     const radius = 12.5; // 25px diameter = 12.5px radius
@@ -32,6 +34,6 @@ export default class Operator {
   }
 
   update(ctx) {
-    (this.draw(ctx), cycleTime, (paused = false));
+    this.draw(ctx);
   }
 }

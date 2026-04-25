@@ -26,5 +26,6 @@ export function newOperator() {
     experience: 0,
     assignment: null,
     quirk: quirk,
+    hired: false,
   });
 }
