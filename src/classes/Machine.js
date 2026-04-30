@@ -14,7 +14,7 @@ export default class Machine {
     price,
     prodRate,
     conditionModifier,
-    active = true,
+    active = false,
     breakdown = false,
     condition = maxCondition,
     selected = false,

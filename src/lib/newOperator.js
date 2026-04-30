@@ -24,7 +24,7 @@ export function newOperator() {
     specialization: specialization,
     rank: "novice",
     experience: 0,
-    assignment: null,
+    assignment: "idle",
     quirk: quirk,
     hired: false,
   });

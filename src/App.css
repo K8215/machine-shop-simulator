@@ -40,6 +40,10 @@ button {
   color: var(--btn-hvr);
 }
 
+.button-short {
+  width: auto;
+}
+
 .grid {
   display: grid;
   gap: 0.5rem;
@@ -115,6 +119,21 @@ canvas {
   flex-direction: column;
   height: 100%;
   width: auto;
+}
+
+.popup {
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .window {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
 }
 
 .error {

@@ -79,7 +79,13 @@ function App() {
           />
         )}
         {openMenu === "hr" && (
-          <HumanResources setOpenMenu={setOpenMenu} operators={operators} />
+          <HumanResources
+            setOpenMenu={setOpenMenu}
+            operators={operators}
+            setOperators={setOperators}
+            machines={machines}
+            setMachines={setMachines}
+          />
         )}
         {openMenu === "departments" && (
           <Departments setOpenMenu={setOpenMenu} />

@@ -40,7 +40,7 @@ export default function HireOperator({ setFunds, setOpenMenu, setOperators }) {
             <p>Specialization: {hire.specialization}</p>
             <p>Quirk: {hire.quirk}</p>
             <button
-              className={`${styles["button-hire"]} button-menu`}
+              className="button-menu button-short"
               onClick={() => {
                 handleHire(hire);
               }}
