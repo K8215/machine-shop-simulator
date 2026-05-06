@@ -1,22 +1,20 @@
 import { useCallback } from "react";
 import { maxCondition } from "../data/gameSettings";
-import { conditionDepleted, badDiceRoll, degradeCondition } from "../lib";
+import {
+  conditionDepleted,
+  badDiceRoll,
+  degradeCondition,
+  updateSingleMachine,
+} from "../lib";
 
 export default function useBreakdowns(machines, setMachines) {
   return useCallback(() => {
     const updated = machines.map((machine) => {
-      const {
-        condition,
-        breakdown,
-        active,
-        conditionModifier,
-        prodRate,
-        constructor,
-      } = machine;
+      const { condition, breakdown, active, conditionModifier, prodRate } =
+        machine;
 
       if (conditionDepleted(condition, breakdown)) {
-        return new constructor({
-          ...machine,
+        return updateSingleMachine(machine, {
           condition: 0,
           breakdown: true,
           active: false,
@@ -28,8 +26,7 @@ export default function useBreakdowns(machines, setMachines) {
         const breakdownChance = maxCondition - condition;
 
         if (badDiceRoll(breakdownChance, maxCondition)) {
-          return new constructor({
-            ...machine,
+          return updateSingleMachine(machine, {
             condition,
             breakdown: true,
             active: false,
@@ -38,8 +35,7 @@ export default function useBreakdowns(machines, setMachines) {
         }
 
         const newCondition = degradeCondition(condition, conditionModifier);
-        return new constructor({
-          ...machine,
+        return updateSingleMachine(machine, {
           condition: newCondition,
           breakdown: false,
           active: true,
@@ -51,6 +47,5 @@ export default function useBreakdowns(machines, setMachines) {
     });
 
     setMachines(updated);
-    //console.log("Updated machines:", updated);
   }, [machines, setMachines]);
 }

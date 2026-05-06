@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./HumanResources.module.css";
-import Machine from "../../classes/Machine";
+import { updateSingleMachine } from "../../lib";
 
 export default function HumanResources({
   setOpenMenu,
@@ -27,15 +27,10 @@ export default function HumanResources({
     );
 
     const updatedMachines = machines.map((machine) => {
-      const updatedData =
-        machine.id === machineId ? { ...machine, active: "active" } : machine;
-
-      if (updatedData instanceof Machine) {
-        return updatedData;
-      } else {
-        return new Machine(updatedData);
+      if (machine.id === machineId) {
+        return updateSingleMachine(machine, { active: "active" });
       }
-    }); // TODO: create util helper for machine updates. See Lumo project.
+    });
 
     setOperators(updatedOperators);
     setMachines(updatedMachines);
