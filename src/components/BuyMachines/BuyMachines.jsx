@@ -1,7 +1,7 @@
 import styles from "./BuyMachines.module.css";
 import { machineMax } from "../../data/gameSettings.js";
 import machinesData from "../../data/machineSettings.json";
-import useBuyMachines from "../../hooks/useBuyMachines";
+import { useBuyMachines } from "../../hooks";
 
 export default function BuyMachines({
   funds,

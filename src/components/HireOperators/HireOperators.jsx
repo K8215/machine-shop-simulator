@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./HireOperators.module.css";
-import useHireOperator from "../../hooks/useHireOperator";
+import { useHireOperator } from "../../hooks";
 import { newOperator } from "../../lib";
 
 export default function HireOperator({ setFunds, setOpenMenu, setOperators }) {
