@@ -1,5 +1,6 @@
 import Machine from "../classes/Machine.js";
 
+//TODO: Make this generic and swap throughout codebase
 export const updateSingleMachine = (machine, updates) => {
   return new Machine({ ...machine, ...updates });
 };
