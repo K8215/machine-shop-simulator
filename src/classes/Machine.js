@@ -34,6 +34,13 @@ export default class Machine {
   }
 
   draw(ctx, cycleTime, paused = false) {
+    if (this.id === 1) {
+      // Replace 1 with the ID of the machine you are testing
+      console.log(
+        `Machine ${this.id} Draw: active=${this.active}, type=${typeof this.active}, breakdown=${this.breakdown}`,
+      );
+    }
+
     let vibrationOffset = 0;
     // Stop vibration if paused
     if (!paused && this.active && typeof cycleTime === "number") {

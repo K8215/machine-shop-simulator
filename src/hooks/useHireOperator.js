@@ -15,8 +15,6 @@ export default function useHireOperator({ setFunds, setOperators }) {
       const currentList = prev || [];
       const newList = [...currentList, hiredOperator];
 
-      console.log("🟢 FULL OPERATORS ARRAY UPDATED:", newList);
-
       return newList;
     });
   };

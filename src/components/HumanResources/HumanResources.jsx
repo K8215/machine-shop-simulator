@@ -20,21 +20,46 @@ export default function HumanResources({
   const handleAssignment = (machineId) => {
     if (!selectedOperator || !machineId) return;
 
-    const updatedOperators = operators.map((operator) =>
-      operator.id === selectedOperator.id
-        ? { ...operator, assignment: machineId }
-        : operator,
-    );
+    let updatedOperators, updatedMachines;
 
-    const updatedMachines = machines.map((machine) => {
-      if (machine.id === machineId) {
-        return updateSingleMachine(machine, { active: "active" });
+    if (machineId === "remove") {
+      //Check for assignmed machine...
+      const prevMachineId =
+        selectedOperator.assignment !== "idle"
+          ? selectedOperator.assignment
+          : null;
+      //...and remove it if it's there.
+      if (prevMachineId) {
+        updatedMachines = machines.map((machine) => {
+          if (machine.id === prevMachineId) {
+            return updateSingleMachine(machine, { active: false });
+          }
+          return machine;
+        });
       }
-    });
+
+      updatedOperators = operators.map((operator) => {
+        return operator.id === selectedOperator.id
+          ? { ...operator, assignment: "idle" }
+          : operator;
+      });
+    } else {
+      updatedOperators = operators.map((operator) => {
+        return operator.id === selectedOperator.id
+          ? { ...operator, assignment: machineId }
+          : operator;
+      });
+
+      updatedMachines = machines.map((machine) => {
+        if (machine.id === machineId) {
+          return updateSingleMachine(machine, { active: true });
+        }
+        return machine;
+      });
+    }
 
     setOperators(updatedOperators);
     setMachines(updatedMachines);
-
     setPopup(false);
     setSelectedOperator(null);
   };
@@ -64,7 +89,7 @@ export default function HumanResources({
                 handlePopup(operator);
               }}
             >
-              Assign
+              Edit Assignment
             </button>
           </div>
         ))}
@@ -83,6 +108,14 @@ export default function HumanResources({
                 <p>Purchase a machine.</p>
               ) : (
                 <>
+                  <p>
+                    <button
+                      onClick={() => handleAssignment("remove")}
+                      className="button-menu"
+                    >
+                      Remove Assignment
+                    </button>
+                  </p>
                   {machines.map((machine) => (
                     <div key={machine.id}>
                       <p>
