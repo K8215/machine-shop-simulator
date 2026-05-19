@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./HumanResources.module.css";
-import { updateSingleMachine } from "../../lib";
+import { updateItemById } from "../../lib";
+import Machine from "../../classes/Machine";
 
 export default function HumanResources({
   setOpenMenu,
@@ -18,44 +19,38 @@ export default function HumanResources({
   };
 
   const handleAssignment = (machineId) => {
-    if (!selectedOperator || !machineId) return;
+    if (!selectedOperator) return;
 
     let updatedOperators, updatedMachines;
 
     if (machineId === "remove") {
-      //Check for assignmed machine...
       const prevMachineId =
         selectedOperator.assignment !== "idle"
           ? selectedOperator.assignment
           : null;
-      //...and remove it if it's there.
+
       if (prevMachineId) {
-        updatedMachines = machines.map((machine) => {
-          if (machine.id === prevMachineId) {
-            return updateSingleMachine(machine, { active: false });
-          }
-          return machine;
-        });
+        updatedMachines = updateItemById(
+          machines,
+          prevMachineId,
+          { active: false },
+          Machine,
+        );
       }
 
-      updatedOperators = operators.map((operator) => {
-        return operator.id === selectedOperator.id
-          ? { ...operator, assignment: "idle" }
-          : operator;
+      updatedOperators = updateItemById(operators, selectedOperator.id, {
+        assignment: "idle",
       });
     } else {
-      updatedOperators = operators.map((operator) => {
-        return operator.id === selectedOperator.id
-          ? { ...operator, assignment: machineId }
-          : operator;
+      updatedOperators = updateItemById(operators, selectedOperator.id, {
+        assignment: machineId,
       });
-
-      updatedMachines = machines.map((machine) => {
-        if (machine.id === machineId) {
-          return updateSingleMachine(machine, { active: true });
-        }
-        return machine;
-      });
+      updatedMachines = updateItemById(
+        machines,
+        machineId,
+        { active: true },
+        Machine,
+      );
     }
 
     setOperators(updatedOperators);

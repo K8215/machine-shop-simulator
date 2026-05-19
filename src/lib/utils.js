@@ -1,16 +1,17 @@
 import Machine from "../classes/Machine.js";
 
-export const updateMachines = (machines, machineId, updates) => {
-  return machines.map((machine) => {
-    const machineData =
-      machine.id === machineId ? { ...machine, ...updates } : machine;
-
-    return new Machine(machineData);
-  });
-};
-
 export const updateSingleMachine = (machine, updates) => {
   return new Machine({ ...machine, ...updates });
+};
+
+export const updateItemById = (items, id, updates, ItemClass = null) => {
+  return items.map((item) => {
+    if (item.id === id) {
+      const updated = { ...item, ...updates };
+      return ItemClass ? new ItemClass(updated) : updated;
+    }
+    return item;
+  });
 };
 
 //Condition/Breakdown handlers
